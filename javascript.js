@@ -28,9 +28,6 @@ function loadDoc() {
       currentAuthor.innerHTML = getAuthor;
       console.log(quoteBox);
       console.log(currentAuthor);
-
-      // let tweetQuote = randomQuote.quote + " - " + randomQuote.author;
-      // tweetCurrentQuote(tweetQuote);
     }
 
   };
@@ -46,12 +43,10 @@ function loadNewQuote() {
 newQuote.addEventListener('click', loadNewQuote);
 
 
-
-function tweetCurrentQuote(tweetQuote) {
-  // let tweetQuote = randomQuote.quote + " - " + randomQuote.author;
+function tweetCurrentQuote() {
+  let tweetQuote = quoteBox.innerHTML + " - " + currentAuthor.innerHTML;
   let url = "https://twitter.com/intent/tweet?text=" + tweetQuote;
   window.open(url);
-  console.log('what am i');
   console.log(tweetQuote);
 };
 
