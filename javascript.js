@@ -1,4 +1,5 @@
-const quoteBox = document.querySelector('#text');
+const quoteBox = document.querySelector('#quote-box'); 
+const currentQuote = document.querySelector('#text'); //use to the #text
 const currentAuthor = document.querySelector('#author');
 const newQuote = document.querySelector('#new-quote');
 const tweettheQuote = document.querySelector('#tweet-quote');
@@ -24,9 +25,9 @@ function loadDoc() {
       console.log(getQuote);
       //gets a random quote
 
-      quoteBox.innerHTML = getQuote;
+      currentQuote.innerHTML = getQuote;
       currentAuthor.innerHTML = getAuthor;
-      console.log(quoteBox);
+      console.log(currentQuote);
       console.log(currentAuthor);
     }
 
@@ -37,14 +38,27 @@ function loadDoc() {
 }
 
 function loadNewQuote() {
+  quoteBox.classList.add('add-glow');
+  currentQuote.classList.add('animated');
+setTimeout(function(){
+  currentQuote.classList.remove('animated');
+  console.log('animating');
+}, 2000);
+
+currentAuthor.classList.add('animated');
+setTimeout(function(){
+  currentAuthor.classList.remove('animated');
+  console.log('animating');
+}, 2000);
   loadDoc();
+  
 }
 
 newQuote.addEventListener('click', loadNewQuote);
 
 
 function tweetCurrentQuote() {
-  let tweetQuote = quoteBox.innerHTML + " - " + currentAuthor.innerHTML;
+  let tweetQuote = currentQuote.innerHTML + " - " + currentAuthor.innerHTML;
   let url = "https://twitter.com/intent/tweet?text=" + tweetQuote;
   window.open(url);
   console.log(tweetQuote);
