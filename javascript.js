@@ -1,5 +1,5 @@
 const quoteBox = document.querySelector('#quote-box'); 
-const currentQuote = document.querySelector('#text'); //use to the #text
+const currentQuote = document.querySelector('#text');
 const currentAuthor = document.querySelector('#author');
 const newQuote = document.querySelector('#new-quote');
 const tweettheQuote = document.querySelector('#tweet-quote');
@@ -56,6 +56,7 @@ setTimeout(function(){
 
 newQuote.addEventListener('click', loadNewQuote);
 
+// Triggers the new quote to be loaded in - by triggering the function above it to run and added the aminated css style classes for the elements to glow and fade in
 
 function tweetCurrentQuote() {
   let tweetQuote = currentQuote.innerHTML + " - " + currentAuthor.innerHTML;
@@ -65,4 +66,6 @@ function tweetCurrentQuote() {
 };
 
 tweettheQuote.addEventListener('click', tweetCurrentQuote);
+
+// This function above is for tweeting the current quote and author to twitter and will open twitter up in a new window 
 
