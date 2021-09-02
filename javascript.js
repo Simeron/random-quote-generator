@@ -11,19 +11,19 @@ function loadDoc() {
       const jsonRawData = this.responseText;
       const data = JSON.parse(jsonRawData);
       const quotes = data.quotes;
-      //gets the data above
+      //Gets the data above
 
       let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
       console.log(randomQuote);
-      //gets a random quote
+      //Gets a random quote
 
       let getAuthor = randomQuote.author; 
       console.log(getAuthor)
-      //gets a random author
+      //Gets a random author
 
       let getQuote = randomQuote.quote; 
       console.log(getQuote);
-      //gets a random quote
+      //Gets a random quote
 
       currentQuote.innerHTML = getQuote;
       currentAuthor.innerHTML = getAuthor;
